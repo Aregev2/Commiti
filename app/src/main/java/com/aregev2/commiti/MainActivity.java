@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.activity_main_frameLayout, new VolunteerFragment());
 
 
         fab = findViewById(R.id.fab);
@@ -47,8 +46,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
         onNavigationItemSelected(navigationView.getMenu().findItem(R.id.activity_main_manu_nav_volunteer));
+        navigationView.setCheckedItem(R.id.activity_main_manu_nav_volunteer);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -65,7 +65,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         switch (id){
             case R.id.activity_main_manu_nav_volunteer:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.activity_main_frameLayout, new VolunteerFragment());
+                fragmentTransaction.commit();
                 fab.hide();
                 break;
             case R.id.activity_main_manu_nav_reports:
