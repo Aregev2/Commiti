@@ -3,9 +3,9 @@ package com.aregev2.commiti;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
