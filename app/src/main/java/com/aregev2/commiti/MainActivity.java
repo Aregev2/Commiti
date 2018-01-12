@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fab.hide();
                 break;
             default:
-                setTitle("Commiti");
                 break;
         }
 

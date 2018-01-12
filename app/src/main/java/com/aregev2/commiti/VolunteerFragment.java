@@ -6,12 +6,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-/**
- * Created by Aregev2 on 12/01/2018.
- */
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class VolunteerFragment extends Fragment {
+
+    private ProgressBar progressBar;
+
+    private TextView textView;
+
+    private int progressMax = 60;
+    private int progress = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -21,5 +26,12 @@ public class VolunteerFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        progressBar = view.findViewById(R.id.fragment_volunteer_progressBar_hours);
+        progressBar.setMax(progressMax);
+        progressBar.setProgress(progress);
+
+        textView = view.findViewById(R.id.fragment_volunteer_textView_progress);
+        textView.setText("You have made " + progress + " out of " + progressMax + " hours.");
+
     }
 }
