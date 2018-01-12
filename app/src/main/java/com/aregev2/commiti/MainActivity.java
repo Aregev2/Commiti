@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.activity_main_frameLayout, new VolunteerFragment());
+                setTitle("Volunteer");
                 fragmentTransaction.commit();
                 fab.hide();
                 break;
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fab.hide();
                 break;
             default:
+                setTitle("Commiti");
                 break;
         }
 
