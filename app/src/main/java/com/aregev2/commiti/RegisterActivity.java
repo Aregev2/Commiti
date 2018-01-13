@@ -19,27 +19,30 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
-    TextInputLayout textInputLayoutUsername;
-    TextInputLayout textInputLayoutEmail;
-    TextInputLayout textInputLayoutPassword;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
+    private TextInputLayout textInputLayoutUsername;
+    private TextInputLayout textInputLayoutEmail;
+    private TextInputLayout textInputLayoutPassword;
 
 
-    EditText editTextUsername;
-    EditText editTextEmail;
-    EditText editTextPassword;
+    private EditText editTextUsername;
+    private EditText editTextEmail;
+    private EditText editTextPassword;
 
-    Button buttonRegister;
+    private Button buttonRegister;
 
-    String username;
-    String email;
-    String password;
+    private String username;
+    private String email;
+    private String password;
 
-    int accountType = 0;
+    private int accountType = 0;
 
 
     @Override

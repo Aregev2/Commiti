@@ -31,7 +31,7 @@ public class VolunteerFragment extends Fragment {
         progressBar.setProgress(progress);
 
         textView = view.findViewById(R.id.fragment_volunteer_textView_progress);
-        textView.setText("You have made " + progress + " out of " + progressMax + " hours.");
+        textView.setText("You have made " + progress + " hours out of " + progressMax + " hours.");
 
     }
 }

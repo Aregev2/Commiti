@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_locations">
+        <item name="location0">Gan Hamada</item>
+        <item name="location1">Magen David Adom</item>
+        <item name="location2">Firefighters</item>
+        <item name="location3">Akim</item>
+        <item name="location4">Nursing Home</item>
+        <item name="location5">Yad Layeled Hameyuhad</item>
+        <item name="location6">Medical Clowning</item>
+        <item name="location7">Havayot</item>
+        <item name="location8">Gamla</item>
+        <item name="location9">Civil Guard</item>
+        <item name="location10">Ironoar</item>
+        <item name="location11">Orkelia</item>
+        <item name="location12">Hanoar haoved - havazelet</item>
+        <item name="location13">Hanoar haoved - hadraha</item>
+        <item name="location14">Ilan</item>
+        <item name="location15">Sport</item>
+        <item name="location16">School tasks</item>
+        <item name="location17">Hamishpaha</item>
+        <item name="location18">Habait haham</item>
+        <item name="location19">Noar Oved Zchoyot</item>
+        <item name="location20">Mentoring A</item>
+        <item name="location21">Mentoring B</item>
+        <item name="location22">Mentoring PDD</item>
+        <item name="location23">Mentoring HIGH SCHOOL</item>
+    </string-array>
+</resources>
