@@ -1,6 +1,7 @@
 package com.aregev2.commiti;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -14,12 +15,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
-    FloatingActionButton fab;
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+
+    private FloatingActionButton floatingActionButton;
+
+    private List<String> titles = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,18 +40,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-
-
-        fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton = findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).show();
             }
         });
-        fab.hide();
+        floatingActionButton.hide();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -49,6 +58,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         onNavigationItemSelected(navigationView.getMenu().findItem(R.id.activity_main_manu_nav_volunteer));
         navigationView.setCheckedItem(R.id.activity_main_manu_nav_volunteer);
         navigationView.setNavigationItemSelectedListener(this);
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("users");
+
     }
 
     @Override
@@ -61,30 +74,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         switch (id){
             case R.id.activity_main_manu_nav_volunteer:
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.activity_main_frameLayout, new VolunteerFragment());
-                setTitle("Volunteer");
                 fragmentTransaction.commit();
-                fab.hide();
+                floatingActionButton.hide();
                 break;
             case R.id.activity_main_manu_nav_reports:
                 //fragmentTransaction.replace(R.id.activity_main_frameLayout, new ReportsFragment());
-                fab.show();
+                floatingActionButton.show();
                 break;
             case R.id.activity_main_manu_nav_profile:
                 //fragmentTransaction.replace(R.id.activity_main_frameLayout, new ProfileFragment());
-                fab.hide();
+                floatingActionButton.hide();
                 break;
             case R.id.activity_main_manu_nav_settings:
-                fab.hide();
+                floatingActionButton.hide();
                 break;
             case R.id.activity_main_manu_nav_logout:
-                fab.hide();
+                floatingActionButton.hide();
                 break;
             default:
                 break;
