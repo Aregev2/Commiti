@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "983905050527",
-    "firebase_url": "https://personalcommitment-b6a49.firebaseio.com",
-    "project_id": "personalcommitment-b6a49",
-    "storage_bucket": "personalcommitment-b6a49.appspot.com"
+    "project_number": "238732616776",
+    "firebase_url": "https://commiti-efaf6.firebaseio.com",
+    "project_id": "commiti-efaf6",
+    "storage_bucket": "commiti-efaf6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:983905050527:android:e8c4c3722afe8305",
+        "mobilesdk_app_id": "1:238732616776:android:e8c4c3722afe8305",
         "android_client_info": {
           "package_name": "com.aregev2.commiti"
         }
       },
       "oauth_client": [
         {
-          "client_id": "983905050527-157qmf962foor9u9fgglo2fq5f49gf95.apps.googleusercontent.com",
+          "client_id": "238732616776-kc2mes98teqs0d8c22av1cpurvbbvgog.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD5TOnsCN1m5_3QORtMo2CfXWAS2ablmKM"
+          "current_key": "AIzaSyCcgWlOPTYH92qz5gX2YGIVkihtfAbXiBk"
         }
       ],
       "services": {
